@@ -1,13 +1,13 @@
 import nodemailer from "nodemailer"
-const {mailtrap_user,mailtrap_pass}=process.env
+
 
 export const sentEmail=async(options,url,txt)=>{
     const transporter = nodemailer.createTransport({
         host: "sandbox.smtp.mailtrap.io",
         port: 2525,
         auth: {
-            user: mailtrap_user, 
-            pass: mailtrap_pass,  
+            user:processenv. mailtrap_user, 
+            pass: process.env.mailtrap_pass,  
         }
     });
 
@@ -55,8 +55,8 @@ export const successEmail=async(options,txt)=>{
       host: "sandbox.smtp.mailtrap.io",
       port: 2525,
       auth: {
-          user: mailtrap_user, 
-          pass: mailtrap_pass,  
+          user:process.env. mailtrap_user, 
+          pass:process.env. mailtrap_pass,  
       }
   });
 
