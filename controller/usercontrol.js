@@ -150,7 +150,7 @@ export const isValidToken=async(req,res)=>{
    if(!resettoken){
     return res.status(400).json({msg:"reset token not found!!"})
    }
-   const isCorrect = await bcrypt.compare(token, resettoken.token);
+   const isCorrect = await bcrypt.compare(token,resettoken.token);
    if (!isCorrect){
     return res.status(400).json({msg:"wrong credentials"})
   }  

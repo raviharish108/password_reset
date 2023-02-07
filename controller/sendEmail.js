@@ -3,8 +3,7 @@ import nodemailer from "nodemailer"
 
 export const sentEmail=async(options,url,txt)=>{
     const transporter = nodemailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
-        port: 2525,
+       service:"gmail",
         auth: {
             user:process.env. mailtrap_user, 
             pass: process.env.mailtrap_pass,  
@@ -52,8 +51,7 @@ export const sentEmail=async(options,url,txt)=>{
 
 export const successEmail=async(options,txt)=>{
   const transporter = nodemailer.createTransport({
-      host: "sandbox.smtp.mailtrap.io",
-      port: 2525,
+     service:"gmail",
       auth: {
           user:process.env. mailtrap_user, 
           pass:process.env. mailtrap_pass,  
