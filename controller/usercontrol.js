@@ -82,7 +82,7 @@ export const reset=async(req,res)=>{
      const temp={ "owner":user._id,  "token":hashedtoken};
      const newreset = new resetToken (temp);
      await newreset.save();
-     const url=`http://localhost:3000/changepassword?token=${token}&id=${user._id}`
+     const url=`https://stunning-kulfi-7efbbf.netlify.app/changepassword?token=${token}&id=${user._id}`
      await sentEmail(user,url,"reset you password")
      res.json({
       success:true,
