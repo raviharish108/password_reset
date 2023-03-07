@@ -29,8 +29,8 @@ export const user_create= async(req,res)=>{
            return res.status(400).json({msg: "This email already exists."})
            }   
            
-           if(password.length < 6){
-                   return res.status(400).json({msg: "Password must be at least less then 6 characters."})
+           if(password.length < 8){
+                   return res.status(400).json({msg: "Password must be at least less then 8 characters."})
             } 
             const passwordHash = await bcrypt.hash(password, 12) 
             
@@ -120,8 +120,8 @@ const issamepassword = await bcrypt.compare(password, user.password);
 if(issamepassword){
   return res.status(400).json({msg:"dont give same password"})
 }
-if(password.length<6){
-  return res.status(400).json({msg:"password must be atleast less then characters"})
+if(password.length<8){
+  return res.status(400).json({msg:"password must be atleast less then 8 characters"})
 }
 const passwordhash=await bcrypt.hash(password,12)
 await User.findOneAndUpdate({_id:id},{password:passwordhash})
